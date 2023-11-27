@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Bike Sharing Demand Prediction</title>
+</head>
+<body>
+    <h2>Bike Sharing Demand Prediction</h2>
+    <form method="post">
+        Time Slot: <input type="text" name="time_slot"><br>
+        Is Weekday (True/False): <input type="text" name="isWeekday"><br>
+        Is Peak Hour (True/False): <input type="text" name="isPeakHour"><br>
+        <input type="submit" value="Predict">
+    </form>
+    {% if trip_count %}
+        <h3>Predicted Trip Count: {{ trip_count }}</h3>
+    {% endif %}
+</body>
+</html>
