@@ -1,18 +1,35 @@
-<!DOCTYPE html>
-<html>
-<head>
-    <title>Bike Sharing Demand Prediction</title>
-</head>
-<body>
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
     <h2>Bike Sharing Demand Prediction</h2>
-    <form method="post">
-        Time Slot: <input type="text" name="time_slot"><br>
-        Is Weekday (True/False): <input type="text" name="isWeekday"><br>
-        Is Peak Hour (True/False): <input type="text" name="isPeakHour"><br>
-        <input type="submit" value="Predict">
+    <form method="post" class="prediction-form">
+        <div class="form-group">
+            <label for="date_input">Date:</label>
+            <input type="date" id="date_input" name="date_input" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="time_input">Time:</label>
+            <input type="time" id="time_input" name="time_input" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="station">Station:</label>
+            <select id="station" name="station" required>
+                {% for station in stations %}
+                    <option value="{{ station }}">{{ station }}</option>
+                {% endfor %}
+            </select>
+        </div>
+        
+        <button type="submit" class="btn predict-btn">Predict</button>
     </form>
-    {% if trip_count %}
-        <h3>Predicted Trip Count: {{ trip_count }}</h3>
+    {% if gif_url %}
+        <div class="prediction">
+            <img src="{{ gif_url }}" alt="Emoji">
+            <p class="prediction-message">{{ message }}</p>
+        </div>
     {% endif %}
-</body>
-</html>
+</div>
+{% endblock %}
