@@ -151,7 +151,7 @@ def process_date_time(date_str, time_str):
 
 def predict_trip_count(time_slot, isWeekday, isPeakHour, station):
     # Dummy station handling
-    station_mapping = {'Station1': 0, 'Station2': 1}  # etc.
+    station_mapping = {'Santa Clara St at 7th St': 0, '1st St at San Carlos St': 1, 'Saint James Park': 2, 'Santa Clara St at Almaden Blvd': 3, 'Julian St at 6th St':4, '9th St at San Fernando St':5, 'Fountain Alley at S 2nd St':6, '19th St at William St': 7, '22nd St at William St':8}
     station_index = station_mapping.get(station, 0)
     
     input_data = pd.DataFrame([[time_slot, isWeekday, isPeakHour]], 
@@ -178,7 +178,7 @@ def predict_trip_count(time_slot, isWeekday, isPeakHour, station):
 
 def get_stations():
     # Replace with actual logic to retrieve station names
-    return ['Station1', 'Station2', 'Station3', 'Station4', 'Station5', 'Station6', 'Station7']
+    return ['None','Santa Clara St at 7th St', '1st St at San Carlos St', 'Saint James Park', 'Santa Clara St at Almaden Blvd', 'Julian St at 6th St', '9th St at San Fernando St', 'Fountain Alley at S 2nd St', '19th St at William St', '22nd St at William St']
 
 if __name__ == '__main__':
     app.run(debug=True)

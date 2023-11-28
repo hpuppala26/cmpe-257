@@ -99,6 +99,25 @@
     }
         /* Add more styles for form inputs and other elements */
     </style>
+    <script>
+        window.onload = function() {
+          // Check if the Geolocation API is supported
+          if ("geolocation" in navigator) {
+            // Request the user's location
+            navigator.geolocation.getCurrentPosition(function(position) {
+              // Location permission granted and location available
+              console.log("Latitude: " + position.coords.latitude + ", Longitude: " + position.coords.longitude);
+            }, function(error) {
+              // Location permission denied or location not available
+              console.error("Error Code = " + error.code + " - " + error.message);
+            });
+          } else {
+            // Geolocation API not supported by the browser
+            console.error("Geolocation is not supported by this browser.");
+          }
+        };
+      </script>
+      
 </head>
 <body>
     <div class="header">
