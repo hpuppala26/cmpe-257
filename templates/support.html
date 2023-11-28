@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container">
+    <h2>Support Us</h2>
+    <form method="post" class="support-form">
+        <div class="form-group">
+            <label for="address">Address:</label>
+            <input type="text" id="address" name="address" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="zip_code">Zip Code:</label>
+            <input type="text" id="zip_code" name="zip_code" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="event_type">Type of Event:</label>
+            <select id="event_type" name="event_type" required>
+                <option value="concert">Select</option>
+                <option value="concert">Concert</option>
+                <option value="festival">Festival</option>
+                <option value="marathon">Marathon</option>
+                <option value="sports">Sports</option>
+            </select>
+        </div>
+        
+        <div class="form-group">
+            <label for="event_size">Approximate Size of Event:</label>
+            <select id="event_size" name="event_size" required>
+                <option value="concert">Select</option>
+                <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+            </select>
+        </div>
+        
+        <button type="submit" class="btn support-btn">Submit</button>
+    </form>
+</div>
+{% endblock %}

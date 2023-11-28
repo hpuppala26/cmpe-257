@@ -141,6 +141,12 @@ def about():
 def contact():
     return render_template('contact.html')
 
+@app.route('/support', methods=['GET', 'POST'])
+def support():
+    if request.method == 'POST':
+        return render_template('thank_you.html')
+    return render_template('support.html')
+
 def process_date_time(date_str, time_str):
     date_time = datetime.strptime(f"{date_str} {time_str}", '%Y-%m-%d %H:%M')
     hour = date_time.hour

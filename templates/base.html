@@ -97,6 +97,47 @@
         background: #e7f5e9; /* A light green background for the message */
         margin-top: 1rem;
     }
+
+    .container {
+        /* ... existing styles ... */
+        padding: 2rem;
+        margin-top: 2rem; /* Add top margin for spacing from header */
+    }
+
+    .form-group {
+        margin-bottom: 1rem; /* Add space below each form group */
+    }
+
+    .form-group label {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .form-group input[type="text"],
+    .form-group select {
+        width: 100%; /* Full width */
+        padding: 0.5rem;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        font-size: 1rem;
+    }
+
+    .btn.support-btn {
+        padding: 0.5rem 1rem;
+        background-color: #5cb85c; /* Green color */
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1rem;
+        transition: background-color 0.3s ease;
+        width: 100%; /* Full width */
+        margin-top: 1rem; /* Add some space on top of the button */
+    }
+
+    .btn.support-btn:hover {
+        background-color: #449d44; /* Darker green on hover */
+    }
         /* Add more styles for form inputs and other elements */
     </style>
     <script>
@@ -126,6 +167,8 @@
                 <li><a href="{{ url_for('index') }}">Home</a></li>
                 <li><a href="{{ url_for('about') }}">About</a></li>
                 <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('support') }}">Support Us</a></li>
+
             </ul>
         </nav>
     </div>
