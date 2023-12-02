@@ -4,5 +4,4 @@ Gunicorn
 tensorflow
 pandas
 numpy
-sklearn
 scikit-learn
