@@ -126,7 +126,7 @@ def index():
         chance_percentage, emoji, message = predict_trip_count(time_slot, isWeekday, isPeakHour, station)
         
         # Add your logic here to determine the correct gif_url based on the emoji
-        gif_url = f'static/{emoji}.gif'  # Placeholder for actual gif paths
+        gif_url = f'https://t4.ftcdn.net/jpg/01/15/20/75/360_F_115207580_US2etunH78I7iMYHOoNVvxQTCIdoPdRj.jpg'  # Placeholder for actual gif paths
 
         return render_template('index.html', gif_url=gif_url, emoji=emoji, message=message, stations=get_stations())
     
